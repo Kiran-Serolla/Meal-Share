@@ -2,3 +2,67 @@
 * {
   font-family: 'Montserrat', sans-serif;
 }
+
+.header{
+  width: 100%;
+  position: fixed;        
+  background: #333;
+  padding: 10px 0;
+  color: #fff;
+  top: 0;
+}
+.container{
+  width: 80%;
+  margin: 0 auto;
+}
+
+nav a{
+  color: #fff;
+  text-decoration: none;
+  padding: 7px 25px;
+  display: inline-block;
+}
+.home img{
+  padding:  25px;
+  margin: 20px;
+}
+.image-grid{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 50px;
+  column-count: auto;
+}
+
+.image-grid img {
+  margin-top: 8px;
+  width: 25%;
+  padding: 20;
+}
+
+  body {
+    font-family: "Times New Roman", Georgia, Serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Playfair Display";
+    letter-spacing: 5px;
+  }
+.form-group{
+margin: auto;
+
+}
+.content-wrapper{
+  margin-top: 200px;
+}
+.meal-image{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.content-wrapper{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
