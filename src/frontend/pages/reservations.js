@@ -13,7 +13,7 @@ function showAllReservations(reservations){
    });
   }
 window.handleReservationsRequest = async () => {
-  //we are fetching the data from backend here
+  //fetching the data from backend 
   const reservationsResponse = await fetch("/api/reservations");
   const getReservations = await reservationsResponse.json();
   console.log (getReservations)
