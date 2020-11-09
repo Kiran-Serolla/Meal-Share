@@ -109,7 +109,7 @@ window.handleMealsRequest = () => {
                           <img class="logo" src="/images/${meal.title}.jpg" alt="Meal title">
                           <h3>${meal.title}</h3><br>
                           <h4><i class="fa fa-eur" style="font-size:24px;"></i>  ${meal.price} DKK</h4>
-                          <a class="btn link-button" href="/meal/${meal.id}" data-navigo>Book Seat</a>
+                          <! -- <a class="btn link-button" href="/meal/${meal.id}" data-navigo></a> 
                           
                       </li>`
               }).join('')

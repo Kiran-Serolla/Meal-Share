@@ -9,10 +9,39 @@ function showSingleMeal(meals){
        <form action = "../../api/reservations" method="post">
        <div class="form-group">
          <label>Meal_id</label>
-         <input class="form-control" type="number" name="meal_id" value = "${meal.id}" />
+         <input id = "mealid" class="form-control" type="number" name="meal_id" value = "${meal.id}" />
               </div>  `
      });
     }
+    // Add reservation 
+
+    function addreservation(event) {
+      event.preventDefault();
+      const mealid = document.getElementById('mealid').value;
+      const name = document.getElementById('contactname').value;
+      const number = document.getElementById('number').value;
+      const phone = document.getElementById('phone').value;
+      const email = document.getElementById('email').value;
+    
+      const inputdata = {
+        number_of_guests: number,
+        Meal_id: mealid,
+        created_date: new Date().toISOString().slice(0, 10), //'2020-08-17',
+        contact_phonenumber: phone,
+        contact_name: name,
+        contact_email: email,
+      };
+      fetch('/api/reservations', {
+        method: 'POST',
+        body: JSON.stringify(inputdata),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => clearform());
+    }
+
   window.handleMealRequest = async (params) => {
     const oneMealResponse = await fetch(`/api/meals/${params.id}`);
     const oneMeal = await oneMealResponse.json();
@@ -40,6 +69,7 @@ function showSingleMeal(meals){
              <a href="/" class="w3-bar-item w3-button">Home</a>
              <a href="/meals" class="w3-bar-item w3-button">Meals</a>
              <a href="/reservations" class="w3-bar-item w3-button">Reservations</a>
+            
              <a href="/review" class="w3-bar-item w3-button">Review</a>
            </div>
            </div>
@@ -51,16 +81,16 @@ function showSingleMeal(meals){
             
                 <div class="form-group">
                   <label>Name</label>
-                  <input class="form-control" type="text" name="name" placeholder="Enter name" /><br>
+                  <input id = "name" class="form-control" type="text" name="name" placeholder="Enter name" /><br>
                   <label>Email</label>
-                  <input class="form-control" type="email" name="Email" placeholder="example@gmail.com" /><br>
+                  <input  id = "email" class="form-control" type="email" name="Email" placeholder="example@gmail.com" /><br>
                     <label>Phone</label>
-                  <input class="form-control" type="tel" name="Phone" placeholder="0045-12345678" /><br>
+                  <input id = "phone" class="form-control" type="tel" name="Phone" placeholder="0045-12345678" /><br>
                     <label>number_of_guests</label>
-                    <input class="form-control" type="number" name="number_of_guests" min="1" max="20" placeholder="Choose a number from list" /><br>
+                    <input id = "number" class="form-control" type="number" name="number_of_guests" min="1" max="20" placeholder="Choose a number from list" /><br>
                     <label>created_date</label>
                     <input class="form-control" type="text" name="created_date" placeholder="yyyy-mm-dd"/><br>
-                    <button  >Submit</button>
+                    <button onClick = addreservation() >Submit</button>
                 </div>
                 </form>
               </div>

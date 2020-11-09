@@ -25,6 +25,7 @@ window.handleHomeRequest = () => {
         <a href="meals" class="w3-bar-item w3-button">Meals</a>
         <a href="reservations" class="w3-bar-item w3-button">Reservations</a>
         <a href="review" class="w3-bar-item w3-button">Review</a>
+        
       </div>
     </div>
   </div>

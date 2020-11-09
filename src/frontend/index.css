@@ -66,3 +66,19 @@ margin: auto;
   margin-right: auto;
   width: 50%;
 }
+.all-meals {
+ margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.reservations ul li {
+  width: 250px;
+  height: 380px;
+  list-style-type: none;
+  border: 1px solid rgb(206, 203, 203);
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  margin: 1em;
+  text-align: center;
+}
